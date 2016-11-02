@@ -96,5 +96,7 @@ FROM tblUrun
 SELECT FLOOR(listeFiyat),urunAd
 FROM tblUrun
 
-SELECT MAX(urunAd)
-FROM tblUrun
+SELECT marka
+FROM tblMarka, tblUrun
+WHERE listeFiyat = (SELECT MAX(listeFiyat) FROM tblUrun)
+
